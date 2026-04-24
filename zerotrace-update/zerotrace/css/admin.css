@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: monospace;
+    background: #0a0a0a;
+    color: #00ff9f;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #111;
+    position: fixed;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    color: #00ff9f;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+.sidebar li:hover {
+    background: #00ff9f;
+    color: black;
+}
+
+.main {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: #111;
+    padding: 20px;
+    border: 1px solid #00ff9f;
+    width: 150px;
+}
+
+.hidden {
+    display: none;
+}
+
+.terminal {
+    background: black;
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #00ff9f;
+}
+
+.charts {
+    display: flex;
+    gap: 2opx;
+    margin-top: 3opx;
+}
+
+canvas {
+    background: #111;
+    padding: 15px;
+    border: 1px solid #00ff9f;
+    width: 45%;
+}
+
+.alerts-table th, .alerts-table td {
+    border: 1px solid #00ff9f;
+    padding: 10px;
+}

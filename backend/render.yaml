@@ -1,0 +1,18 @@
+# render.yaml — Render.com deployment config
+# Push to GitHub then import at render.com
+
+services:
+  - type: web
+    name: zerotrace-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false        # Set manually in Render dashboard
+      - key: JWT_SECRET
+        sync: false        # Set manually in Render dashboard
+      - key: CLIENT_URL
+        sync: false        # Your Netlify URL
+      - key: PORT
+        value: 5000

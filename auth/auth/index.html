@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero Trace Cyber Legacy — Cybersecurity Academy</title>
+  <meta name="description" content="Cybersecurity education platform. 6 modules, 60 lessons. Learn · Earn · Lead.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/progress-page.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<!-- ── LOADER ── -->
+<div id="loader">
+  <div class="loader-logo">ZERO TRACE CYBER LEGACY</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">INITIALISING SECURE ENVIRONMENT...</div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav id="navbar">
+  <a class="nav-brand" href="#hero">ZERO TRACE ▸ CYBER LEGACY</a>
+  <div class="nav-links">
+    <a href="#hero"    class="nav-scroll">HOME</a>
+    <a href="#modules" class="nav-scroll">MODULES</a>
+    <a onclick="TerminalPage.open()" style="cursor:pointer">TERMINAL</a>
+    <a onclick="ProgressPage.open()" style="cursor:pointer">PROGRESS</a>
+    <a href="#about"   class="nav-scroll">ABOUT</a>
+    <a href="https://github.com" target="_blank" rel="noopener">GITHUB</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:.8rem">
+    <div id="nav-auth-area">
+      <!-- Populated by auth.js -->
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span id="nav-pts-label">0 CTF PTS</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN PAGE
+══════════════════════════════════════════════════════ -->
+<div id="main-page">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div style="position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center">
+      <div class="hero-tag">// CLASSIFIED TRAINING ENVIRONMENT — COHORT 01</div>
+      <h1 class="hero-title">
+        <span class="glitch" data-text="ZERO TRACE">ZERO TRACE</span><br>
+        <span style="color:var(--white);font-size:.6em;letter-spacing:.15em">CYBER LEGACY</span>
+      </h1>
+      <div class="hero-subtitle" id="hero-type" style="min-height:1.5em">Cybersecurity Education for African Learners</div>
+      <div class="hero-tagline">LEARN · EARN · LEAD</div>
+
+      <div class="hero-progress-wrap">
+        <div class="prog-label">
+          <span>CLEARANCE LEVEL</span>
+          <span id="hero-pct">0%</span>
+        </div>
+        <div class="prog-bar"><div class="prog-fill" id="hero-fill"></div></div>
+      </div>
+
+      <div class="hero-stats">
+        <span>📚 <b id="hero-lessons">0</b>/60 Lessons</span>
+        <span>🏆 <b id="hero-pts">0</b> CTF Points</span>
+        <span>📦 <b id="hero-mods">0</b>/6 Modules</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#modules" class="btn-cta nav-scroll">[ BEGIN TRAINING ]</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOT TERMINAL -->
+  <div style="max-width:800px;margin:0 auto;padding:0 2rem 2rem">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="t-dot t-red"></span>
+        <span class="t-dot t-amb"></span>
+        <span class="t-dot t-grn"></span>
+        <span class="terminal-title">zerotrace_init.sh</span>
+      </div>
+      <div class="terminal-body" id="boot-terminal" style="min-height:220px;max-height:240px;overflow:hidden"></div>
+    </div>
+  </div>
+
+  <!-- MODULES SECTION -->
+  <section id="modules">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">TRAINING MODULES</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="modules-grid">
+
+        <!-- MODULE 01 -->
+        <div class="module-card" id="card-mod01">
+          <div class="card-header">
+            <span class="card-num">MODULE 01</span>
+            <span class="card-badge badge-available">AVAILABLE</span>
+          </div>
+          <div class="card-title">Reconnaissance & OSINT</div>
+          <div class="card-desc">Master open-source intelligence gathering. Learn to find data hiding in plain sight across the internet without touching the target.</div>
+          <div class="card-tags">
+            <span class="card-tag">OSINT</span>
+            <span class="card-tag">Recon</span>
+            <span class="card-tag">Intelligence</span>
+          </div>
+          <div class="card-lessons">10 Lessons · ~4.5 Hours</div>
+          <div class="card-prog-bar"><div class="card-prog-fill" style="width:0%"></div></div>
+          <div class="card-prog-text">0/10 lessons</div>
+          <div class="card-meta">
+            <span>Beginner → Intermediate</span>
+            <span class="card-pts">500 + 250 BONUS PTS</span>
+          </div>
+          <button class="btn-start" onclick="LV.open('mod01',1)">[ START MODULE → ]</button>
+        </div>
+
+        <!-- MODULE 02 -->
+        <div class="module-card locked" id="card-mod02">
+          <div class="card-header">
+            <span class="card-num">MODULE 02</span>
+            <span class="card-badge badge-locked">LOCKED</span>
+          </div>
+          <div class="card-title">Network Fundamentals</div>
+          <div class="card-desc">Deep dive into the OSI model, TCP/IP protocols, subnetting, and packet analysis. Understand how data moves across systems.</div>
+          <div class="card-tags">
+            <span class="card-tag">Networking</span>
+            <span class="card-tag">TCP/IP</span>
+            <span class="card-tag">Wireshark</span>
+          </div>
+          <div class="card-lessons">10 Lessons · ~5 Hours</div>
+          <div class="card-prog-bar"><div class="card-prog-fill" style="width:0%"></div></div>
+          <div class="card-prog-text">0/10 lessons</div>
+          <div class="card-meta">
+            <span>Beginner → Intermediate</span>
+            <span class="card-pts">600 + 300 BONUS PTS</span>
+          </div>
+          <button class="btn-start locked-btn">[ LOCKED — Complete Previous Module ]</button>
+        </div>
+
+        <!-- MODULE 03 -->
+        <div class="module-card locked" id="card-mod03">
+          <div class="card-header">
+            <span class="card-num">MODULE 03</span>
+            <span class="card-badge badge-locked">LOCKED</span>
+          </div>
+          <div class="card-title">Linux for Hackers</div>
+          <div class="card-desc">Command the terminal. Master Linux architecture, bash scripting, and the tools that power every penetration test.</div>
+          <div class="card-tags">
+            <span class="card-tag">Linux</span>
+            <span class="card-tag">Bash</span>
+            <span class="card-tag">CLI</span>
+          </div>
+          <div class="card-lessons">10 Lessons · ~5 Hours</div>
+          <div class="card-prog-bar"><div class="card-prog-fill" style="width:0%"></div></div>
+          <div class="card-prog-text">0/10 lessons</div>
+          <div class="card-meta">
+            <span>Beginner → Intermediate</span>
+            <span class="card-pts">700 + 350 BONUS PTS</span>
+          </div>
+          <button class="btn-start locked-btn">[ LOCKED — Complete Previous Module ]</button>
+        </div>
+
+        <!-- MODULE 04 -->
+        <div class="module-card locked" id="card-mod04">
+          <div class="card-header">
+            <span class="card-num">MODULE 04</span>
+            <span class="card-badge badge-locked">LOCKED</span>
+          </div>
+          <div class="card-title">Web Vulnerabilities</div>
+          <div class="card-desc">Exploit the web. From SQL injection to XSS, learn how attackers break modern web applications and how to defend them.</div>
+          <div class="card-tags">
+            <span class="card-tag">SQLi</span>
+            <span class="card-tag">XSS</span>
+            <span class="card-tag">OWASP</span>
+          </div>
+          <div class="card-lessons">10 Lessons · ~5.5 Hours</div>
+          <div class="card-prog-bar"><div class="card-prog-fill" style="width:0%"></div></div>
+          <div class="card-prog-text">0/10 lessons</div>
+          <div class="card-meta">
+            <span>Intermediate → Advanced</span>
+            <span class="card-pts">800 + 400 BONUS PTS</span>
+          </div>
+          <button class="btn-start locked-btn">[ LOCKED — Complete Previous Module ]</button>
+        </div>
+
+        <!-- MODULE 05 -->
+        <div class="module-card locked" id="card-mod05">
+          <div class="card-header">
+            <span class="card-num">MODULE 05</span>
+            <span class="card-badge badge-locked">LOCKED</span>
+          </div>
+          <div class="card-title">Exploitation & Metasploit</div>
+          <div class="card-desc">Learn exploitation frameworks, payload delivery, privilege escalation, and post-exploitation techniques used by red teams.</div>
+          <div class="card-tags">
+            <span class="card-tag">Metasploit</span>
+            <span class="card-tag">Payloads</span>
+            <span class="card-tag">Shells</span>
+          </div>
+          <div class="card-lessons">10 Lessons · ~6 Hours</div>
+          <div class="card-prog-bar"><div class="card-prog-fill" style="width:0%"></div></div>
+          <div class="card-prog-text">0/10 lessons</div>
+          <div class="card-meta">
+            <span>Intermediate → Advanced</span>
+            <span class="card-pts">900 + 450 BONUS PTS</span>
+          </div>
+          <button class="btn-start locked-btn">[ LOCKED — Complete Previous Module ]</button>
+        </div>
+
+        <!-- MODULE 06 -->
+        <div class="module-card locked" id="card-mod06">
+          <div class="card-header">
+            <span class="card-num">MODULE 06</span>
+            <span class="card-badge badge-locked">LOCKED</span>
+          </div>
+          <div class="card-title">Defense & Forensics</div>
+          <div class="card-desc">Switch to the blue team. Master incident response, log analysis, threat hunting, and digital forensics techniques.</div>
+          <div class="card-tags">
+            <span class="card-tag">DFIR</span>
+            <span class="card-tag">Forensics</span>
+            <span class="card-tag">Blue Team</span>
+          </div>
+          <div class="card-lessons">10 Lessons · ~5.5 Hours</div>
+          <div class="card-prog-bar"><div class="card-prog-fill" style="width:0%"></div></div>
+          <div class="card-prog-text">0/10 lessons</div>
+          <div class="card-meta">
+            <span>Intermediate → Advanced</span>
+            <span class="card-pts">1000 + 500 BONUS PTS</span>
+          </div>
+          <button class="btn-start locked-btn">[ LOCKED — Complete Previous Module ]</button>
+        </div>
+
+      </div><!-- /modules-grid -->
+    </div><!-- /section -->
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="glitch" data-text="ABOUT THIS PLATFORM">ABOUT THIS PLATFORM</h2>
+    <p>Zero Trace Cyber Legacy is a structured cybersecurity education platform designed for African learners. Built and delivered as <strong>GeP ProTech Academy — Cohort 1</strong>, this curriculum covers 6 modules and 60 lessons across the full cybersecurity lifecycle.</p>
+    <p>From passive reconnaissance to active exploitation to defensive forensics — every lesson is designed to be practical, hands-on, and immediately applicable in the real world.</p>
+    <p style="color:var(--green);font-family:var(--font-display);font-size:.9rem;letter-spacing:.1em;margin-top:1.5rem">LEARN · EARN · LEAD</p>
+    <p style="color:var(--grey);font-size:.85rem;margin-top:.5rem">Built by <strong style="color:var(--green-dim)">Nathan</strong> · GeP ProTech Academy · Cameroon</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2024 ZERO TRACE CYBER LEGACY — ALL RIGHTS RESERVED</span>
+    <span>
+      <a href="#hero" class="nav-scroll">HOME</a> ·
+      <a href="#modules" class="nav-scroll">MODULES</a> ·
+      <a href="#about" class="nav-scroll">ABOUT</a>
+    </span>
+    <span style="color:var(--green-dim)">LEARN · EARN · LEAD</span>
+  </footer>
+
+</div><!-- /main-page -->
+
+<!-- ══════════════════════════════════════════════════════
+     TERMINAL PAGE
+══════════════════════════════════════════════════════ -->
+<div id="terminal-page">
+
+  <!-- Top info bar -->
+  <div class="term-topbar">
+    <span class="term-topbar-title">// ZERO TRACE SECURE SHELL v2.4.1</span>
+    <div class="term-topbar-meta">
+      <span>CTF PTS: <b id="term-pts-display">0</b></span>
+      <span>LESSONS: <b id="term-lessons-display">0/60</b></span>
+      <span>CLEARANCE: <b id="term-pct-display">0%</b></span>
+      <span><button onclick="TerminalPage.close()" style="background:transparent;border:1px solid var(--border);color:var(--grey);font-family:var(--font-mono);font-size:.65rem;padding:.2rem .6rem;cursor:pointer;transition:color .2s,border-color .2s" onmouseover="this.style.color='var(--green)';this.style.borderColor='var(--green-dim)'" onmouseout="this.style.color='var(--grey)';this.style.borderColor='var(--border)'">✕ EXIT</button></span>
+    </div>
+  </div>
+
+  <div class="term-layout">
+
+    <!-- Left sidebar — quick commands -->
+    <div class="term-commands">
+      <div class="term-cmd-section">NAVIGATION</div>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('status')">
+        <span class="term-cmd-icon">📊</span>status
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('modules')">
+        <span class="term-cmd-icon">📦</span>modules
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('ctf')">
+        <span class="term-cmd-icon">🏆</span>ctf
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('stats')">
+        <span class="term-cmd-icon">📈</span>stats
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('activity')">
+        <span class="term-cmd-icon">🕐</span>activity
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('points')">
+        <span class="term-cmd-icon">💰</span>points
+      </button>
+
+      <div class="term-cmd-section" style="margin-top:.5rem">MODULES</div>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('module 01')">
+        <span class="term-cmd-icon">01</span>OSINT
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('module 02')">
+        <span class="term-cmd-icon">02</span>Networking
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('module 03')">
+        <span class="term-cmd-icon">03</span>Linux
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('module 04')">
+        <span class="term-cmd-icon">04</span>Web Vulns
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('module 05')">
+        <span class="term-cmd-icon">05</span>Exploitation
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('module 06')">
+        <span class="term-cmd-icon">06</span>Defense
+      </button>
+
+      <div class="term-cmd-section" style="margin-top:.5rem">TOOLS</div>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('ping 8.8.8.8')">
+        <span class="term-cmd-icon">📡</span>ping
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('scan 192.168.1.1')">
+        <span class="term-cmd-icon">🔍</span>nmap scan
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('whois example.com')">
+        <span class="term-cmd-icon">🌐</span>whois
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('whoami')">
+        <span class="term-cmd-icon">👤</span>whoami
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('help')">
+        <span class="term-cmd-icon">❓</span>help
+      </button>
+      <button class="term-cmd-btn" onclick="Terminal.sidebarCmd('clear')">
+        <span class="term-cmd-icon">🗑</span>clear
+      </button>
+    </div>
+
+    <!-- Main terminal window -->
+    <div class="term-window" id="term-window">
+      <div class="term-win-bar">
+        <div class="term-win-dots">
+          <span class="tw-dot tw-red"></span>
+          <span class="tw-dot tw-amb"></span>
+          <span class="tw-dot tw-grn"></span>
+        </div>
+        <span class="term-win-path">
+          <span class="path-user">root</span>@<span class="path-host">zerotrace</span>:<span class="path-dir">~/academy</span>
+        </span>
+        <span style="font-family:var(--font-mono);font-size:.6rem;color:var(--grey);margin-left:auto">↑↓ history &nbsp;·&nbsp; TAB autocomplete &nbsp;·&nbsp; ENTER run</span>
+      </div>
+      <div class="term-output" id="term-output"></div>
+      <div class="term-input-row">
+        <span class="term-prompt-label">root@zerotrace:~/academy$</span>
+        <input class="term-input" id="term-input" type="text" placeholder="type a command..." autocomplete="off" spellcheck="false">
+        <button class="term-run-btn" onclick="(()=>{const i=document.getElementById('term-input');Terminal.sidebarCmd&&Terminal.sidebarCmd(i.value);i.value='';i.focus()})()">RUN</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PROGRESS PAGE
+══════════════════════════════════════════════════════ -->
+<div id="progress-page">
+  <div class="progress-page-inner">
+
+    <!-- Header -->
+    <div class="prog-page-header">
+      <div>
+        <div class="prog-page-title">// PROGRESS TRACKER</div>
+        <div class="prog-page-sub">GeP ProTech Academy — Cohort 1 &nbsp;·&nbsp; Zero Trace Cyber Legacy</div>
+      </div>
+      <button class="prog-reset-btn" onclick="ProgressPage.confirmReset()">[ RESET PROGRESS ]</button>
+    </div>
+
+    <!-- Stats row -->
+    <div class="prog-stats-row">
+      <div class="prog-stat-card">
+        <div class="prog-stat-label">CLEARANCE LEVEL</div>
+        <div class="prog-stat-value" id="pg-pct">0%</div>
+        <div class="prog-stat-sub">overall completion</div>
+      </div>
+      <div class="prog-stat-card">
+        <div class="prog-stat-label">LESSONS DONE</div>
+        <div class="prog-stat-value amber" id="pg-total-lessons">0</div>
+        <div class="prog-stat-sub">out of 60 total</div>
+      </div>
+      <div class="prog-stat-card">
+        <div class="prog-stat-label">CTF POINTS</div>
+        <div class="prog-stat-value amber" id="pg-ctf-pts">0</div>
+        <div class="prog-stat-sub">accumulated score</div>
+      </div>
+      <div class="prog-stat-card">
+        <div class="prog-stat-label">RANK</div>
+        <div class="prog-stat-value" style="font-size:1rem;padding-top:.3rem" id="pg-rank">RECRUIT</div>
+        <div class="prog-stat-sub">current clearance rank</div>
+      </div>
+      <div class="prog-stat-card">
+        <div class="prog-stat-label">MODULES</div>
+        <div class="prog-stat-value cyan" id="pg-total-modules">0/6</div>
+        <div class="prog-stat-sub">completed</div>
+      </div>
+      <div class="prog-stat-card">
+        <div class="prog-stat-label">IN PROGRESS</div>
+        <div class="prog-stat-value cyan" id="pg-active">0</div>
+        <div class="prog-stat-sub">active modules</div>
+      </div>
+    </div>
+
+    <!-- Overall bar -->
+    <div class="prog-overall-section">
+      <div class="prog-overall-label">
+        <span class="left">OVERALL CLEARANCE PROGRESS</span>
+        <span class="right" id="pg-overall-pct">0%</span>
+      </div>
+      <div class="prog-overall-bar">
+        <div class="prog-overall-fill" id="pg-overall-fill" style="width:0%"></div>
+      </div>
+      <div class="prog-overall-sublabels">
+        <span id="pg-overall-lessons">0 / 60 lessons</span>
+        <span>5500 max CTF points</span>
+      </div>
+    </div>
+
+    <!-- Module rows -->
+    <div class="prog-modules-title">MODULE PROGRESS</div>
+    <div class="prog-modules-list" id="pg-module-rows">
+      <!-- Populated by progress-page.js -->
+    </div>
+
+    <!-- Lesson breakdown accordion -->
+    <div class="prog-lessons-section">
+      <div class="prog-modules-title">LESSON BREAKDOWN
+        <span style="font-family:var(--font-mono);font-size:.65rem;color:var(--grey);font-weight:normal;margin-left:1rem">(click a module to expand · click a lesson to open)</span>
+      </div>
+      <div id="pg-lessons-breakdown">
+        <!-- Populated by progress-page.js -->
+      </div>
+    </div>
+
+    <!-- Points breakdown -->
+    <div class="prog-pts-section">
+      <div class="prog-activity-title">CTF POINTS PER MODULE</div>
+      <div class="pts-breakdown" id="pg-pts-breakdown">
+        <!-- Populated by progress-page.js -->
+      </div>
+    </div>
+
+    <!-- Activity log -->
+    <div class="prog-activity-section">
+      <div class="prog-activity-title">ACTIVITY LOG
+        <span style="font-family:var(--font-mono);font-size:.65rem;color:var(--grey);font-weight:normal;margin-left:1rem">(last 30 events)</span>
+      </div>
+      <div class="activity-log" id="pg-activity-log">
+        <div class="activity-empty">[ No activity yet. Complete a lesson to begin logging! ]</div>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <div style="text-align:center;margin-top:2rem">
+      <button onclick="ProgressPage.close()" class="btn-cta" style="font-size:.75rem">[ ← BACK TO HOME ]</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON PAGE
+══════════════════════════════════════════════════════ -->
+<div id="lesson-page">
+  <div class="lesson-layout">
+
+    <!-- Sidebar -->
+    <div class="lesson-sidebar" id="lesson-sidebar">
+      <!-- Populated by viewer.js -->
+    </div>
+
+    <!-- Content -->
+    <div class="lesson-content" id="lesson-content-area">
+      <!-- Populated by viewer.js -->
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     GATE PAGE — Login / Register wall
+══════════════════════════════════════════════════════ -->
+<div id="gate-page">
+  <div class="gate-grid"></div>
+
+  <div class="gate-logo glitch" data-text="ZERO TRACE">ZERO TRACE</div>
+  <div class="gate-sub">CYBER LEGACY — COHORT 01 · SECURE ACCESS REQUIRED</div>
+
+  <div class="gate-box">
+    <div class="gate-box-header">
+      <span class="gate-box-title">// AUTHENTICATION</span>
+      <div class="gate-tabs">
+        <button class="gate-tab active" id="gate-tab-login"    onclick="GatePage.switchTab('login')">LOGIN</button>
+        <button class="gate-tab"        id="gate-tab-register" onclick="GatePage.switchTab('register')">REGISTER</button>
+      </div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="gate-login-form" class="gate-form active" onsubmit="GatePage.submitLogin(event)">
+      <div class="gf-field">
+        <label class="gf-label">EMAIL OR USERNAME</label>
+        <div class="gf-input-wrap">
+          <input class="gf-input" id="gate-login-ident" type="text" placeholder="operator@example.com" required autocomplete="username">
+          <span class="gf-icon">👤</span>
+        </div>
+      </div>
+      <div class="gf-field">
+        <label class="gf-label">PASSWORD</label>
+        <div class="gf-input-wrap">
+          <input class="gf-input" id="gate-login-pass" type="password" placeholder="••••••••" required autocomplete="current-password" style="padding-right:2.5rem">
+          <button type="button" class="gf-toggle-pass" onclick="GatePage.togglePass('gate-login-pass',this)">👁</button>
+        </div>
+      </div>
+      <div class="gf-error" id="gate-login-error"></div>
+      <div class="gf-success" id="gate-login-ok"></div>
+      <button type="submit" class="gf-submit" id="gate-login-btn">
+        [ LOGIN ]<span class="btn-spinner"></span>
+      </button>
+      <div class="gf-switch">No account? <a onclick="GatePage.switchTab('register')">Register here →</a></div>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="gate-register-form" class="gate-form" onsubmit="GatePage.submitRegister(event)">
+      <div class="gf-field">
+        <label class="gf-label">USERNAME</label>
+        <div class="gf-input-wrap">
+          <input class="gf-input" id="gate-reg-username" type="text" placeholder="ZeroTrace_Operator" required minlength="3" maxlength="20" autocomplete="username">
+          <span class="gf-icon">🎯</span>
+        </div>
+        <div class="gf-hint">Letters, numbers and _ only. Min 3 characters.</div>
+      </div>
+      <div class="gf-field">
+        <label class="gf-label">EMAIL</label>
+        <div class="gf-input-wrap">
+          <input class="gf-input" id="gate-reg-email" type="email" placeholder="operator@example.com" required autocomplete="email">
+          <span class="gf-icon">✉</span>
+        </div>
+      </div>
+      <div class="gf-field">
+        <label class="gf-label">PASSWORD</label>
+        <div class="gf-input-wrap">
+          <input class="gf-input" id="gate-reg-pass" type="password" placeholder="Min 6 characters" required minlength="6" autocomplete="new-password" oninput="GatePage.updateStrength(this.value)" style="padding-right:2.5rem">
+          <button type="button" class="gf-toggle-pass" onclick="GatePage.togglePass('gate-reg-pass',this)">👁</button>
+        </div>
+        <div class="gf-strength" id="gate-reg-strength">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="gf-field">
+        <label class="gf-label">CONFIRM PASSWORD</label>
+        <div class="gf-input-wrap">
+          <input class="gf-input" id="gate-reg-pass2" type="password" placeholder="Repeat password" required autocomplete="new-password">
+          <span class="gf-icon">🔒</span>
+        </div>
+      </div>
+      <div class="gf-check-row">
+        <input type="checkbox" id="gate-reg-terms" required>
+        <label for="gate-reg-terms">I agree to use this platform for learning purposes only and not for illegal activities.</label>
+      </div>
+      <div class="gf-error" id="gate-reg-error"></div>
+      <div class="gf-success" id="gate-reg-ok"></div>
+      <button type="submit" class="gf-submit" id="gate-reg-btn">
+        [ CREATE ACCOUNT ]<span class="btn-spinner"></span>
+      </button>
+      <div class="gf-switch">Already registered? <a onclick="GatePage.switchTab('login')">Login here →</a></div>
+    </form>
+  </div>
+
+  <div style="position:relative;z-index:1;margin-top:1.5rem;font-family:'Share Tech Mono',monospace;font-size:.62rem;color:#4a6b4e;text-align:center">
+    GeP ProTech Academy · Cameroon 🇨🇲 · All sessions are tracked for educational purposes.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PROFILE PANEL
+══════════════════════════════════════════════════════ -->
+<div id="panel-overlay" onclick="ProfilePanel.close()"></div>
+
+<div id="profile-panel">
+  <div class="pp-header">
+    <span class="pp-title">// OPERATOR PROFILE</span>
+    <button class="pp-close" onclick="ProfilePanel.close()">✕ CLOSE</button>
+  </div>
+
+  <div class="pp-avatar-section">
+    <div class="pp-avatar">?</div>
+    <div>
+      <div class="pp-name">—</div>
+      <div class="pp-email">—</div>
+      <span class="pp-rank-badge">RECRUIT</span>
+    </div>
+  </div>
+
+  <div class="pp-stats">
+    <div class="pp-stat">
+      <div class="pp-stat-val" id="pp-pct">0%</div>
+      <div class="pp-stat-lbl">CLEARANCE</div>
+    </div>
+    <div class="pp-stat">
+      <div class="pp-stat-val amber" id="pp-pts">0</div>
+      <div class="pp-stat-lbl">CTF POINTS</div>
+    </div>
+    <div class="pp-stat">
+      <div class="pp-stat-val" id="pp-lessons">0</div>
+      <div class="pp-stat-lbl">LESSONS DONE</div>
+    </div>
+    <div class="pp-stat">
+      <div class="pp-stat-val amber" id="pp-logins">0</div>
+      <div class="pp-stat-lbl">TOTAL LOGINS</div>
+    </div>
+  </div>
+
+  <div class="pp-section">
+    <div class="pp-section-title">MODULE PROGRESS</div>
+    <div id="pp-mod-list"></div>
+  </div>
+
+  <div class="pp-section">
+    <div class="pp-section-title">SESSION INFO</div>
+    <div id="pp-location"></div>
+  </div>
+
+  <div class="pp-section">
+    <div class="pp-section-title">ACTIONS</div>
+    <button class="pp-btn" onclick="ProfilePanel.close();ProgressPage.open()">📊 View Full Progress</button>
+    <button class="pp-btn" onclick="ProfilePanel.close();TerminalPage.open()">💻 Open Terminal</button>
+    <button class="pp-btn danger" onclick="Auth.logout()">🚪 Logout</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     ADMIN DASHBOARD
+══════════════════════════════════════════════════════ -->
+<div id="admin-panel">
+  <div class="admin-header">
+    <span class="admin-title">// ADMIN DASHBOARD — ZERO TRACE CYBER LEGACY</span>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+      <button class="admin-close" onclick="AdminPanel.exportCSV()">⬇ EXPORT CSV</button>
+      <button class="admin-close" onclick="AdminPanel.close()">✕ CLOSE</button>
+    </div>
+  </div>
+
+  <div class="admin-inner">
+
+    <!-- Stats -->
+    <div class="admin-stats-row">
+      <div class="admin-stat"><div class="admin-stat-lbl">TOTAL USERS</div><div class="admin-stat-val" id="adm-total-users">0</div></div>
+      <div class="admin-stat"><div class="admin-stat-lbl">STUDENTS</div><div class="admin-stat-val cyan" id="adm-total-students">0</div></div>
+      <div class="admin-stat"><div class="admin-stat-lbl">TOTAL LOGINS</div><div class="admin-stat-val" id="adm-total-logins">0</div></div>
+      <div class="admin-stat"><div class="admin-stat-lbl">LESSONS DONE</div><div class="admin-stat-val amber" id="adm-total-lessons">0</div></div>
+      <div class="admin-stat"><div class="admin-stat-lbl">COUNTRIES</div><div class="admin-stat-val cyan" id="adm-total-countries">0</div></div>
+      <div class="admin-stat"><div class="admin-stat-lbl">TOP SCORE</div><div class="admin-stat-val amber" id="adm-top-pts">0</div></div>
+    </div>
+
+    <!-- Countries chart -->
+    <div class="admin-section-title">USERS BY COUNTRY</div>
+    <div class="admin-chart" id="adm-countries-chart" style="margin-bottom:2.5rem"></div>
+
+    <!-- Users table -->
+    <div class="admin-section-title">ALL REGISTERED USERS</div>
+    <div class="admin-search">
+      <input id="adm-search" type="text" placeholder="Search by username or email..." oninput="AdminPanel.filterUsers()">
+      <button onclick="AdminPanel.render()">↻ REFRESH</button>
+    </div>
+    <div style="overflow-x:auto;margin-bottom:2rem">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>USERNAME</th><th>EMAIL</th><th>POINTS</th><th>PROGRESS</th>
+            <th>COUNTRY</th><th>IP ADDRESS</th><th>LAST LOGIN</th><th>LOGINS</th><th>ROLE</th>
+          </tr>
+        </thead>
+        <tbody id="adm-users-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Activity feed -->
+    <div class="admin-section-title">RECENT ACTIVITY</div>
+    <div class="activity-log" id="adm-activity-feed" style="max-height:320px"></div>
+
+  </div>
+</div>
+
+<!-- ── SCRIPTS ── -->
+<script src="js/progress.js"></script>
+<script src="js/lessons-mod01.js"></script>
+<script src="js/lessons-mod02-06.js"></script>
+<script src="js/viewer.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/progress-page.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Live nav points update -->
+<script>
+  setInterval(() => {
+    const s  = ZT.load();
+    const el = document.getElementById('nav-pts-label');
+    if (el) el.textContent = s.pts.toLocaleString() + ' CTF PTS';
+  }, 500);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!--
+===========================================================
+  HOW TO ADD LOGIN/REGISTER TO YOUR index.html
+  Make these 3 small changes:
+===========================================================
+
+CHANGE 1 — Add these 2 script tags just before </body>:
+-->
+
+  <script src="js/api.js"></script>
+  <script src="js/auth-modal.js"></script>
+
+<!--
+CHANGE 2 — Add the auth area to your navbar.
+Find this line in your <nav>:
+
+    <div class="nav-status">
+
+And ADD this div right BEFORE it:
+-->
+
+  <div id="nav-auth-area" style="display:flex;gap:.5rem;align-items:center;margin-right:.5rem">
+    <!-- Populated by auth-modal.js -->
+  </div>
+
+<!--
+CHANGE 3 — Hook API.saveProgress() into lesson completions.
+In js/progress-page.js, find this line inside the completeLesson hook:
+
+    ZT_logActivity(msg, pts, icon);
+
+And ADD this line RIGHT AFTER it:
+-->
+
+    if (window.API && API.isLoggedIn()) {
+      API.completeLesson(modId, lessonNum, pts, { time: new Date().toLocaleString(), msg, pts, icon });
+    }
+
+<!--
+That's it! Your site now has:
+  - Login / Register modal (glowing green, hacker style)
+  - Progress auto-synced to MongoDB when logged in
+  - Leaderboard accessible from the 🏆 button in nav
+  - Auto-save every 60 seconds
+  - Progress loaded from cloud on login
+===========================================================
+-->

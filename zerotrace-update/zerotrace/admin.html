@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ZeroTtace Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>ZeroTrace</h2>
+        <ul>
+            <li onclick="showsection('dashboard')">Dashboard</li>
+            <li onclick="showsection('user')">Users</li>
+            <li onclick="showsection('logs')">Logs</li>
+        </ul>
+    </div>
+
+<div class="main">
+
+    <!-- DASHBOARD -->
+     <div id="dashboard" class="section">
+        <h1> ⚡ Admin Security Analytics Dashboard</h1>
+        <div class="cards">
+            <div class="card">Users: <span id="userCount">0</span></div>
+            <div class="card">Threats Today: <span id="threatCount">20</span></div>
+            <div class="card">Blocked IPs: <span id="blockedIPs">l1</span></div>
+            <div class="card">System Status: SECURE</div>
+        </div>
+
+     <h2>🚨 Recent Security Alerts</h2>
+     <table class="alert-table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Threat</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="alertsBody"></tbody>
+     </table>
+     </div>
+
+     <!-- USERS -->
+      <div id="user" class="section hidden">
+        <h1>👤 User Mangement</h1>
+        <button onclick="loadUsers()">Load Users</button>
+        <ul id="userlist"></ul>
+      </div>
+      <!-- LOGS -->
+       <div id="logs" class="section hidden">
+        <h1>📡 system logs</h1>
+        <div class="terminal" id="terminal"></div>
+       </div>
+
+<h1>Admin Dashboard</h1>
+<button onclick="loadAdmin()">Load Admin Data</button>
+<p id="data"></p>
+
+
+</div>
+
+<script>
+    async function loadAdmin() {
+        const token = localStorage.getItem("token");
+
+        const res = await fetch("https://your-backend-url/api/admin/dashboard", {
+            headers: {
+                Authorization: "Bearer" + token
+            }
+        });
+
+        const data = await res.json();
+        document.getElementById("data").innerText = data.message;
+
+    }
+        
+    
+</script>
+</body>
